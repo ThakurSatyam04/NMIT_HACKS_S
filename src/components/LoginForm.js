@@ -3,6 +3,8 @@ import {AiFillEye,AiFillEyeInvisible} from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {toast} from "react-hot-toast";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 const LoginForm = ({setIsLoggedIn}) => {  
 
@@ -12,6 +14,8 @@ const LoginForm = ({setIsLoggedIn}) => {
         email:"",
         password:""
     })
+
+    const [errorMsg, setErrorMsg] = useState("");
 
     const[showPassword , setShowPassword] = useState(false);
 
@@ -27,19 +31,40 @@ const LoginForm = ({setIsLoggedIn}) => {
 
     function submitHandler(event){
         event.preventDefault();
-        setIsLoggedIn(true);
-        toast.success("logged In");
-        console.log("Printing the formData");
-        console.log(formData);
-        navigate("/dashboard");
-    }
+        setTimeout(() => {
+            if (!formData.email || !formData.password) {
+              setErrorMsg("");  
+              return;
+            }
+            setErrorMsg("");
+          }, 2000);
+      
+          signInWithEmailAndPassword(auth, formData.email, formData.password)
+          .then((res) => { 
+              // const user = res.user;
+              setIsLoggedIn(true);
+              toast.success("logged In")
+              navigate("/dashboard")
+          })
+          .catch((error) => {
+          setErrorMsg(formData.error);
+          });
+        } 
+      
+        const handleKeyPress = (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            submitHandler(e);
+          }
+        };
+      
 
   return (
    <form onSubmit={submitHandler}
-   className="flex flex-col w-fullgap-y-4 mt-6">
+   className="flex flex-col w-fullgap-y-4 mt-6 ">
 
     <label className="w-full">
-        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">Email Id<sup className="text-pink-200">*</sup></p>
+        <p className="text-[0.875rem] font-semibold mb-1 leading-[1.375rem]">Email Id<sup className="text-pink-200">*</sup></p>
         <input
             required 
             type="email" 
@@ -47,12 +72,13 @@ const LoginForm = ({setIsLoggedIn}) => {
             onChange={changeHandler} 
             placeholder="Enter your email"
             name="email"
-            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+            className="bg-gray-200 rounded-[0.5rem] w-full p-[12px]"
+            onKeyDown={handleKeyPress}
         />
     </label>
 
     <label className="w-full relative">
-        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] mt-3">Password<sup className="text-pink-200">*</sup></p>
+        <p className="text-[0.875rem] font-semibold mb-1 leading-[1.375rem] mt-3">Password<sup className="text-pink-200">*</sup></p>
         <input
             required 
             type={showPassword?("text"):("password")} 
@@ -60,7 +86,8 @@ const LoginForm = ({setIsLoggedIn}) => {
             onChange={changeHandler} 
             placeholder="Password"
             name = "password"
-            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+            className="bg-gray-200 rounded-[0.5rem] w-full p-[12px]"
+            onKeyDown={handleKeyPress}
         />
 
             <span className="absolute right-3 top-[50px] cursor-pointer" onClick={()=> setShowPassword((prev)=>!prev)}>
@@ -68,7 +95,7 @@ const LoginForm = ({setIsLoggedIn}) => {
             </span>
 
             <Link to="#" >
-                <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
+                <p className="text-xs mt-1 font-semibold max-w-max ml-auto">
                     Forgot Password
                 </p>
             </Link>
