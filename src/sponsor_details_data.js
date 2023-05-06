@@ -1,56 +1,32 @@
 const data = [
-	{
-		id: 1,
-		name: "RedBull",
-		info: "Agra is a city in northern India, known for the iconic Taj Mahal, a stunning white marble mausoleum built by Mughal emperor Shah Jahan in memory of his beloved wife. Agra is also home to several other historic and architectural wonders, including Agra Fort and Fatehpur Sikri.",
-		image: "https://cdn.thecodehelp.in/Agra.jpeg",
-		price: "35,758",
-		domain:"Sports"
+    {
+        id: 1,
+        Company_name: "John Smith",
+        email: "tugrp@example.com",
+        sponsorship_type : "₹10000",
+		site : "www.google.com",
+        image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB",
+        company_type : "Agriculture",
+        company_size : "Small",
+        company_location : "Dhaka",
+        company_description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lorem sed lorem sed lorem sed lorem",
+        expectation :"20 nos Hording of size 12*25 ",
+		TagLine:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lorem sed"
 	},
+	
 	{
 		id: 2,
-		name: "FileCoin",
-		info: `Jaipur is the capital city of the Indian state of Rajasthan, known for its stunning pink-hued buildings and palaces. The city is also known as the "Pink City" due to the color of many of its buildings. Jaipur is famous for its intricate textiles, colorful handicrafts, and delicious cuisine.`,
-		image: "https://cdn.thecodehelp.in/Jaipur.jpeg",
-		price: "82,560",
-		domain:"Tech"
-	},
-	{
-		id: 3,
-		name: "Swift Ride",
-		info: " Goa is a small state on India's western coast, known for its stunning beaches, vibrant nightlife, and Portuguese-influenced architecture. The state is also known for its spicy seafood dishes and unique cultural traditions.",
-		image: "https://cdn.thecodehelp.in/Goa.jpeg",
-		price: "29,695",
-		domain:"Dance"
-	},
-	{
-		id: 4,
-		name: "Solana",
-		info: "Varanasi is a holy city in northern India, situated on the banks of the sacred river Ganges. The city is a major pilgrimage site for Hindus and is famous for its ancient temples, winding alleyways, and colorful festivals.",
-		image: "https://cdn.thecodehelp.in/Varanasi.jpeg",
-		price: "31,095",
-	},
-	{
-		id: 5,
-		name: "Quine",
-		info: "Starting in the colorful port city of Gdańsk, you'll escape the crowds and embrace the understated elegance of ready-for-prime-time Poland for 10 days. With an expert Rick Steves guide at your side, you'll experience mighty Malbork castle, the cobbly-cute village of Toruń, Poland's contemporary capital of Warsaw, the spiritual Jasna Góra Monastery, and charming Kraków — Poland's finest city. In this land of surprises — so trendy and hip, yet steeped in history — there's so much to discover. Join us for the Best of Poland in 10 Days!",
-		image: "https://cdn.thecodehelp.in/Darjeeling.jpeg",
-		price: "78,595",
-	},
-	{
-		id: 6,
-		name: "Devfolio",
-		info: "Jaisalmer is a city in the Indian state of Rajasthan, known for its stunning sandstone architecture and its location in the heart of the Thar Desert. The city is home to several impressive palaces and fortresses, as well as unique cultural traditions and handicrafts.",
-		image: "https://cdn.thecodehelp.in/Jaisalmer.jpeg",
-		price: "68,595",
-	},
-	{
-		id: 7,
-		name: "Polygon",
-		info: "Kochi is a port city in the Indian state of Kerala, known for its historic connections to trade and commerce. The city is home to several stunning churches, synagogues, and mosques, as well as a rich culinary tradition that blends Indian, Portuguese, and other influences.",
-		image: "https://cdn.thecodehelp.in/Kochi.jpeg",
-		price: "68,595",
-	},
-];
+		Company_name: "ABC Corporation",
+		email: "abc@example.com",
+		site : "www.example2.com",
+		sponsorship_type: "complimentaty food ",
+            image: "https://images.unsplash.com/photo-1581498210889-9f1e7dfee645?ixid=MnwxMjA3fDB",
+            company_type: "Food",
+            company_size: "Medium",
+            company_location: "Mumbai",
+            company_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula, risus a pharetra aliquam, est lorem fringilla velit, sed ullamcorper risus sapien quis sapien. Cras venenatis mauris sit amet tellus gravida, at semper nisl malesuada.",
+            expectation: "promotion of there food products "
+            }
+]
 
 export default data;

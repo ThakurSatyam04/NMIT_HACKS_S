@@ -32,6 +32,13 @@ let setIsLoggedIn = props.setIsLoggedIn;
             </Link>
         }
         { isLoggedIn &&
+            <Link to="/getstarted">
+                <button className="bg-richblack-800  text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
+                    Get Started
+                </button>
+            </Link>
+        }
+        { isLoggedIn &&
             <Link to="/login">
                 <button className="bg-richblack-800  text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700" onClick={()=>{
                     setIsLoggedIn(false);
@@ -41,13 +48,7 @@ let setIsLoggedIn = props.setIsLoggedIn;
                 </button>
             </Link>
         }
-        { isLoggedIn &&
-            <Link to="/dashboard">
-                <button className="bg-richblack-800  text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
-                    Dashboard
-                </button>
-            </Link>
-        }
+        
         { ! isLoggedIn &&
             <Link to="/signup">
                 <button className="bg-richblack-800  text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">

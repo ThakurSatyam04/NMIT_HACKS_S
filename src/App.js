@@ -13,6 +13,9 @@ import Sponsors from "./pages/Sponsors";
 import data from './sponsor_card_data'
 import Sponsor_details from "./components/Sponsor_details";
 import SponsorForm from "./pages/SponsorForm";
+import GetStarted from "./pages/GetStarted";
+import OrganizerForm from "./pages/OrganizerForm";
+import Sponsor_form from './components/Sponsor_form'
 
 function App() {
 
@@ -38,14 +41,17 @@ function App() {
 
       <Routes>
 
-      <Route path="/" element = {<Home isLoggedIn={isLoggedIn}/>}/>
+      <Route path="/" element = {<Dashboard isLoggedIn={isLoggedIn}/>}/>
       <Route path="/login" element = {<Login setIsLoggedIn = {setIsLoggedIn}/>}/>
       <Route path="/signup" element = {<Signup setIsLoggedIn = {setIsLoggedIn}/>}/>
+      <Route path="/getstarted" element = {<GetStarted setIsLoggedIn = {setIsLoggedIn}/>}/>
+      <Route path="/sponsorForm" element = {<Sponsor_form setIsLoggedIn = {setIsLoggedIn}/>}/>
+      <Route path="/organizerForm" element = {<OrganizerForm setIsLoggedIn = {setIsLoggedIn}/>}/>
       <Route path="/sponsors" element = {<Sponsors setIsLoggedIn = {setIsLoggedIn} users={users}/>}/>
-      <Route path="/sponsors_details" element = {<Sponsor_details setIsLoggedIn = {setIsLoggedIn} users={users}/>}/>
+      <Route path="/sponsors_details/:id" element = {<Sponsor_details setIsLoggedIn = {setIsLoggedIn} users={users}/>}/>
       <Route path="/sponsor_form" element = {<SponsorForm setIsLoggedIn = {setIsLoggedIn}/>}/>
       <Route path="/dashboard" element = {
-      // <PrivateRoute isLoggedIn={isLoggedIn}>
+      <PrivateRoute isLoggedIn={isLoggedIn}>
         <Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn = {setIsLoggedIn} name={userName}/>
       // </PrivateRoute>
       }/>
