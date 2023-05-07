@@ -54,7 +54,7 @@ const Sponsor_details = () => {
                     <p className='font-bold mr-4'>{details[0].company_size}</p>
                 </div>
                 <div className='mt-4 flex'>
-                    <p className='font-semibold mr-2'>Expectations :</p>
+                    <p className='font-semibold mr-2'>Expectations:</p>
                     <p className='font-bold mr-4'>{details[0].expectation}</p>
                 </div>
                 <div className='mt-4 flex'>

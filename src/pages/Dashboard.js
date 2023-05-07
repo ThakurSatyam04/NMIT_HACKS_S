@@ -33,9 +33,9 @@ const Dashboard = () => {
                     <Link to="/sponsors" className="px-4 py-2 mr-4 text-white uppercase border-pink-500 border-2  rounded-lg text-md hover:bg-pink-400">
                         Get Sponsors
                     </Link>
-                    <a href="#" className="px-4 py-2 text-pink-500 uppercase bg-transparent border-2 border-pink-500 rounded-lg dark:text-white hover:bg-pink-500 hover:text-white text-md">
+                    <Link to="/organizers" className="px-4 py-2 text-pink-500 uppercase bg-transparent border-2 border-pink-500 rounded-lg dark:text-white hover:bg-pink-500 hover:text-white text-md">
                         Become a Sponsor
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="relative hidden sm:block sm:w-1/3 lg:w-3/5"> 
